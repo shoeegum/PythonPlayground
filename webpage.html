@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOCX Text Editor - Replace or Delete Text</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/custom.css">
+    
+</head>
+<body>
+    <header class="bg-dark py-3">
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-between">
+                <h1 class="text-light mb-0">
+                    <i class="fas fa-file-word me-2"></i>
+                    DOCX Text Editor
+                </h1>
+                <nav>
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="/">
+                                <i class="fas fa-home me-1"></i> Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="/elisa">
+                                <i class="fas fa-microscope me-1"></i> ELISA Converter
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container py-4">
+        
+            
+        
+
+        
+<!-- Tutorial Overlay -->
+<div class="tutorial-overlay" id="tutorialOverlay">
+    <div class="tutorial-modal">
+        <div class="tutorial-close" id="tutorialClose">
+            <i class="fas fa-times"></i>
+        </div>
+        
+        <div class="tutorial-header">
+            <h2 class="tutorial-title">Welcome to DOCX Text Editor</h2>
+            <p class="tutorial-subtitle">Let's learn how to use this tool in a few simple steps</p>
+        </div>
+        
+        <div class="tutorial-steps" id="tutorialSteps">
+            <!-- Step 1: Introduction -->
+            <div class="tutorial-step active" data-step="1">
+                <div class="tutorial-step-number"></div>
+                <div class="tutorial-step-content">
+                    <h4>What This Tool Can Do</h4>
+                    <p>The DOCX Text Editor allows you to:</p>
+                    <ul>
+                        <li>Replace text in Word documents (.docx files)</li>
+                        <li>Delete text by leaving the replacement field empty</li>
+                        <li>Perform multiple replacements in a single operation</li>
+                        <li>Convert specialized ELISA documentation with exact formatting</li>
+                    </ul>
+                    <p>This tutorial will walk you through the basic operations.</p>
+                </div>
+            </div>
+            
+            <!-- Step 2: Upload a Document -->
+            <div class="tutorial-step" data-step="2">
+                <div class="tutorial-step-number"></div>
+                <div class="tutorial-step-content">
+                    <h4>Uploading Your Document</h4>
+                    <p>To get started, upload a Word document (.docx file):</p>
+                    <ol>
+                        <li>Drag and drop your file into the upload area, or</li>
+                        <li>Click the "Browse Files" button to select a file</li>
+                    </ol>
+                    <p>The file preview will show once uploaded with the filename and size.</p>
+                    <p class="text-info"><i class="fas fa-info-circle"></i> Tip: You can cancel the file selection by clicking the X icon in the preview.</p>
+                </div>
+            </div>
+            
+            <!-- Step 3: Adding Replacements -->
+            <div class="tutorial-step" data-step="3">
+                <div class="tutorial-step-number"></div>
+                <div class="tutorial-step-content">
+                    <h4>Specifying Text to Find and Replace</h4>
+                    <p>Enter the text you want to find and what to replace it with:</p>
+                    <ol>
+                        <li>In the "Find Text" field, enter the exact text you want to locate</li>
+                        <li>In the "Replace With" field, enter the new text (leave empty to delete)</li>
+                        <li>Add more replacements by clicking the "Add Another Replacement" button</li>
+                        <li>Remove unwanted replacement pairs by clicking the X button</li>
+                    </ol>
+                    <p class="text-warning"><i class="fas fa-exclamation-triangle"></i> Important: The search is case-sensitive, so make sure to match case exactly.</p>
+                </div>
+            </div>
+            
+            <!-- Step 4: Processing Document -->
+            <div class="tutorial-step" data-step="4">
+                <div class="tutorial-step-number"></div>
+                <div class="tutorial-step-content">
+                    <h4>Processing Your Document</h4>
+                    <p>After setting up all your replacements:</p>
+                    <ol>
+                        <li>Click the "Process Document" button</li>
+                        <li>Wait while the document is processed (large files may take a moment)</li>
+                        <li>Once complete, you'll see a download link for your modified document</li>
+                        <li>Click "Download Modified Document" to save the result to your computer</li>
+                    </ol>
+                    <p>The tool will show you how many replacements were made in the document.</p>
+                </div>
+            </div>
+            
+            <!-- Step 5: Advanced Features -->
+            <div class="tutorial-step" data-step="5">
+                <div class="tutorial-step-number"></div>
+                <div class="tutorial-step-content">
+                    <h4>Using Advanced Features</h4>
+                    <p>The DOCX Text Editor includes advanced capabilities:</p>
+                    <ul>
+                        <li><strong>Multiple Replacements</strong>: Process many find/replace pairs at once</li>
+                        <li><strong>Text Deletion</strong>: Remove text by leaving the replacement empty</li>
+                        <li><strong>ELISA Document Converter</strong>: For specialized ELISA kit documentation conversion</li>
+                    </ul>
+                    <p>To access the ELISA Document Converter, click the button at the bottom of the page.</p>
+                    <p class="text-info"><i class="fas fa-info-circle"></i> Need help? Click the tutorial button <i class="fas fa-question"></i> at any time to see this guide again.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tutorial Complete Message -->
+        <div class="tutorial-complete-message" id="tutorialComplete">
+            <div class="tutorial-complete-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>You're All Set!</h3>
+            <p>You now know how to use the DOCX Text Editor. Try it out with your own documents.</p>
+            <button class="btn btn-primary mt-3" id="tutorialFinishBtn">Start Using the Tool</button>
+        </div>
+        
+        <!-- Navigation Buttons -->
+        <div class="tutorial-navigation" id="tutorialNavigation">
+            <button class="btn btn-outline-secondary tutorial-nav-btn" id="prevBtn" disabled>Previous</button>
+            <button class="btn btn-primary tutorial-nav-btn" id="nextBtn">Next</button>
+        </div>
+        
+        <!-- Progress Dots -->
+        <div class="tutorial-progress" id="tutorialProgress">
+            <div class="tutorial-dot active" data-step="1"></div>
+            <div class="tutorial-dot" data-step="2"></div>
+            <div class="tutorial-dot" data-step="3"></div>
+            <div class="tutorial-dot" data-step="4"></div>
+            <div class="tutorial-dot" data-step="5"></div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <div class="card shadow-sm mb-4">
+            <div class="card-header">
+                <h2 class="card-title h4 mb-0">
+                    <i class="fas fa-exchange-alt me-2"></i>
+                    Replace or Delete Text in DOCX Documents
+                </h2>
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    Upload a DOCX file and specify the text you want to replace or delete. Add multiple replacements for batch
+                    processing. The application will process your document and provide a download link for the modified file.
+                </p>
+
+                <div class="alert alert-info">
+                    <div class="d-flex">
+                        <div class="me-3">
+                            <i class="fas fa-info-circle fa-2x"></i>
+                        </div>
+                        <div>
+                            <h5 class="alert-heading">How it works</h5>
+                            <p class="mb-0">
+                                1. Upload your DOCX document<br>
+                                2. Enter text to find and its replacement (leave empty to delete)<br>
+                                3. Add more find/replace pairs if needed<br>
+                                4. Click "Process Document" to make all changes<br>
+                                5. Download the modified document
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <form action="/upload" method="post" enctype="multipart/form-data" id="uploadForm">
+                    <div class="mb-3">
+                        <label for="document" class="form-label">DOCX Document</label>
+                        
+                        <div class="dropzone" id="documentDropzone">
+                            <div class="upload-icon">
+                                <i class="fas fa-file-upload"></i>
+                            </div>
+                            <h4 class="drag-text">Drag & Drop your DOCX file here</h4>
+                            <div class="or-text">or</div>
+                            <button type="button" class="btn btn-outline-primary" id="browseBtn">
+                                <i class="fas fa-folder-open me-2"></i>Browse Files
+                            </button>
+                            <input type="file" class="d-none" id="document" name="document" accept=".docx" required>
+                        </div>
+                        
+                        <div id="filePreview" class="file-preview d-none">
+                            <div class="file-icon">
+                                <i class="fas fa-file-word"></i>
+                            </div>
+                            <div class="file-info">
+                                <div class="file-name" id="fileName">document.docx</div>
+                                <div class="file-meta" id="fileSize">0 KB</div>
+                            </div>
+                            <div class="remove-file" id="removeFile">
+                                <i class="fas fa-times-circle"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="form-text">Only DOCX files are supported (max 16MB)</div>
+                    </div>
+
+                    <div id="replacements-container">
+                        <div class="row replacement-row mb-3">
+                            <div class="col-md-5">
+                                <label for="find_text_0" class="form-label">Find Text</label>
+                                <input type="text" class="form-control find-text" id="find_text_0" name="find_text[]" placeholder="Text to find" required>
+                            </div>
+                            <div class="col-md-5">
+                                <label for="replace_text_0" class="form-label">Replace With</label>
+                                <input type="text" class="form-control replace-text" id="replace_text_0" name="replace_text[]" placeholder="Text to replace with (leave empty to delete)">
+                            </div>
+                            <div class="col-md-2 d-flex align-items-end mb-2">
+                                <button type="button" class="btn btn-outline-danger remove-row" style="display: none;">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <button type="button" class="btn btn-outline-secondary" id="addReplacementBtn">
+                            <i class="fas fa-plus me-2"></i>Add Another Replacement
+                        </button>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary" id="processBtn">
+                            <i class="fas fa-cogs me-2"></i>Process Document
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        
+
+        <div class="card shadow-sm mt-4">
+            <div class="card-header">
+                <h3 class="card-title h5 mb-0">
+                    <i class="fas fa-lightbulb me-2"></i>
+                    Tips for Best Results
+                </h3>
+            </div>
+            <div class="card-body">
+                <ul class="mb-0">
+                    <li>For exact matches, make sure to match case and spacing exactly</li>
+                    <li>To delete text completely, leave the "Replace With" field empty</li>
+                    <li>Add multiple find/replace pairs for batch processing</li>
+                    <li>The tool processes text in paragraphs, tables, headers, and footers</li>
+                    <li>Complex formatting around the replaced text may be affected</li>
+                    <li>Always verify the changes in the downloaded document</li>
+                    <li>Make a backup of your original document before replacing important content</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="card shadow-sm mt-4">
+            <div class="card-header bg-info text-white">
+                <h3 class="card-title h5 mb-0">
+                    <i class="fas fa-file-medical me-2"></i>
+                    Advanced Document Processing
+                </h3>
+            </div>
+            <div class="card-body">
+                <p>Need more advanced document processing for specialized formats?</p>
+                <div class="d-grid">
+                    <a href="/elisa" class="btn btn-info">
+                        <i class="fas fa-microscope me-2"></i>ELISA Document Converter
+                    </a>
+                </div>
+                <div class="small text-muted mt-2">
+                    The ELISA Document Converter is a specialized tool for converting Boster ELISA documentation 
+                    to Innovative Research format following specific guidelines.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </main>
+
+    <footer class="bg-dark text-center text-light py-3 mt-5">
+        <div class="container">
+            <p class="mb-0">© 2023 DOCX Text Editor. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Tutorial Trigger Button -->
+    <div class="tutorial-trigger" id="tutorialTrigger" title="Start Tutorial">
+        <i class="fas fa-question"></i>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="/static/js/script.js"></script>
+    
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // This will be handled by the main script.js file
+    });
+</script>
+
+</body>
+</html>
