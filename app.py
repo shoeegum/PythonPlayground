@@ -110,7 +110,8 @@ def upload_file():
         session['output_path'] = output_path
         session['download_filename'] = f"modified_{orig_filename}"
         
-        return redirect(url_for('index', processed=True))
+        return redirect(url_for('index'))
+
     
     except Exception as e:
         logger.exception("Error processing document")
