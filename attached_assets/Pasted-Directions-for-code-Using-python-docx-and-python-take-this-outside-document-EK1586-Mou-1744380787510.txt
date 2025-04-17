@@ -1,0 +1,84 @@
+Directions for code:
+
+Using python.docx and python
+
+take this 'outside' document -> 
+EK1586_Mouse_KLK1Kallikrein_1_ELISA_Kit_PicoKine_Datasheet.docx
+
+and pull specific items from it, and populate them into this 'inside' document ->
+Boster Template.docx
+
+I have included what the final document should look like ideally after conversion (as of right now this is done manually and takes about 40 minutes to convert, thus my reasoning for creating a code to automate this process). With this code, the document should be automated to look very similar to the document that was done by hand. I will include a few 'final product documents' to give you a general understanding of what these look like and how they are different. The final document for this one is IMSKLK1KT-Sample, which is located in the 'boster examples after manual transformation' folder in the zip. 
+I have also included another company with some examples, this one should be simpler because it requires less difficulties and mostly only requires technical changes. This company is reddot and so (like Boster) all instances of this word should be replaced with Innovative Research. I have also included a template which is what we use right now to make the process of copying and pasting go by a little bit faster, although we are trying to get rid of this process all together with this automation system that you are helping code!
+
+
+Specific instructions that should be used to automate each document:
+
+The "ELISA Kit" "CATALOG NO:" and "LOT NO:" can stay the same. This is the first page of the inside document. Also on the first page is the "INTENDED USE" section. This section is pulled from the "Assay Principle" section in the 'outside' document, it is the first paragraph of this section, and only the first paragraph. You also need to get rid of 'The Boster PicoKine Mouse Klk1 Pre-Coated ELISA (ENZYME-Linked Immunosorbent Assay) kit' in the first sentence. You can replace 'The Boster PicoKine' with 'The Innovative Research'. This section should be titled "INTENDED USE: " in the 'inside' document. 
+All instances of Boster and PicoKine should be deleted and not appear in the inside document. 
+Everything on the first page of the outside document can be disregarded, as we have a different format than them. We also have different catalog numbers. There should be a prompt where you ask the user what the catalog and lot number are, these should be populated into their respective places on the first page of the inside document.
+
+The next section should be titled: "BACKGROUND" in the 'inside' section, it comes from the 'outside' document's section that starts with "Background on ..." the third word will be different for each outside document (in this case it is 'Background on Klk1). But it is important this is where the background information for the 'inside' document is coming from. 
+
+The following section for the 'inside' document is titled: "ASSAY PRINCIPLE" , the content for this section should be taken from the last paragraph of "Assay Principle" in the 'outside' document. The last sentence of this paragraph should be deleted before getting put into the 'inside' document
+
+The next section should be titled 'OVERVIEW' in the 'inside' document. This comes from the section "Overview" in the 'outside' document. There is a table in this section that should be included in the 'inside' document. HOWEVER, some rows SHOULD NOT be included, these include: "Product Name" and "Description". HOWEVER, they can be included if you are able to delete the appearances of PicoKine from them. Currently, in the inside document I have this section titled as 'SPECIFICATION' if this would be easier to implement, follow that, or do it the other way, this current way combines Boster's section's 'Overview' and 'Technical Details' into one section in the inside document titled 'Specification' but I am more than open to separating the two sections to more so replicate the outside documents format. 
+
+The next section is titled "Technical Details" in the 'outside' document, but should be titled "TECHNICAL DETAILS" in the 'inside' document. All of the contents of the table can be outputted in the 'inside' document. 
+
+The next section is titled " Preparations Before Assay" in the 'outside' document, it should be renamed in the 'inside' document to be called "PREPARATIONS BEFORE ASSAY". The whole section can be included, however make sure the list #1-12 is lined up and uniform. NO ITALICS, this goes for all of the inside document.
+
+The next section is titled "Kit Components/Materials Provided" in the 'outside' section, this should be relabeled as 'KIT COMPONENT/MATERIALS PROVIDED' when transferring it to the 'inside' document. The whole table can be included for this. Currently, I have this section labeled as 'REAGENTS' in the inside document, however disregard this and change it to 'KIT COMPONENT/MATERIALS PROVIDED'
+
+The 'outside' section titled "Required Materials That Are Not Supplied" should be relabeled for the 'inside' section as "REQUIRED MATERIALS THAT ARE NOT SUPPLIED". For this section you can include all contents from the 'outside' source, however I want them in bullet-point form if possible. If not this is okay.
+
+The next section for the 'inside' document to be created is the "STANDARD CURVE EXAMPLE", this content will come from the section of the 'outside' document that ends in "...Standard Curve Example" This title will be different from each new 'outside' document that we run through this code, but they should all end with "...Standard Curve Example". If it is possible to include the first few words (like 'Mouse Klk1 ELISA Standard Curve Example') and be able to change the first few words with each different document, then please do that, if not possible then just keep the title as Standard Curve Example. For this section I need the table populated with "Concentration (pg/ml)" as the first row, with its corresponding numbers, and "O.D." as the second row, populated with its corresponding numbers. I am not sure why but the Boster section is a bit weird with populating this, the second cell in the first row is connected to the first cell. However, look at my inside document for how it should look. If it helps you, this first number in the table will always be 0.0. The table should be filled out as a 2 x 10 table. This section should also include the figure within this section, make sure to delete the PicoKine from occurring in the inside document. Right now I have it split up in the inside document as 'TYPICAL DATA' and 'TYPICAL STANDARD CURVE' but you can combine them if that is easier for you, based on the way I described it, or separate them.
+
+
+The 'outside' section "Intra/Inter-Assay Variability" should now be titled "INTRA/INTER-ASSAY VARIABILITY" in the 'inside' section. Make sure to change Boster to Innovative Research in the first sentence. everything within that section can be included in the 'inside' document, including the table, all as it appears.
+
+"Reproducibility" which appears in the 'outside' document, should now be titled "REPRODUCIBILITY" in the 'inside' document. The new section can include everything from the old section, including the table.
+
+"Preparation Before The Experiment" section from the 'outside' document, should be titled "PREPARATION BEFORE THE EXPERIMENT" in the 'inside' document. Everything can stay the same when transferring, except for the last row in the table. Change 'Boster Bio's interal QC testing used: ' to 'Innovative Research's internal QC testing used: '
+
+The next section in the 'inside' document should be labeled "DILUTION OF STANDARD", this content will be taken from the 'outside' document's section that starts with "Dilution of ...." the following words after that statement will be different for each 'outside' document, however it should always start with those two words. You can include all the contents in this section, including the picture as well. Make sure the numbering is aligned, no italics, and everything is uniform.
+
+Taking from the 'outside' document's section called "Sample Preparation and Storage" turn this into a new section in the 'inside' section titled "SAMPLE PREPARATION AND STORAGE"  everything from the 'outside' section can be included in the 'inside' section, including the paragraph and the table.
+
+The next section in the 'inside' document should be titled "SAMPLE COLLECTION NOTES" this should be populated from the 'outside' document's section called "Sample Collection Notes" . Everything can be included, but the word "Boster" should always be changed to "Innovative Research". This is always the rule for the whole 'inside' document, the word "Boster" should never appear, it should always be replaced with the words "Innovative Research". Again, make sure italics are gone and listing is aligned.
+
+The next section that should be created in the 'inside' document is the "SAMPLE DILUTION GUIDELINE" it should hold all of the same contents from the "Sample Dilution Guideline" in the 'outside' section.
+
+The next section in the 'inside' document should be called "ASSAY PROTOCOL",  it should take all the contents from the section in the 'outside' document titled "Assay Protocol". Making sure to align the list #1-13 and indenting for #8 and #10's list when the sections a, b, c, and d come up, they should be indented under those numbers appropriately.
+
+The next section in the 'inside' section should be labeled "ASSAY PROTOCOL NOTES", you should get the contents of this section from the 'outside' section titled "Assay Protocol Notes" all of the content within this 'outside section' can be transferred word-for-word into the 'inside' document. Just make sure the lining is correct for the list #1-10, no italics.
+
+The next section should be titled "DATA ANALYSIS" in the 'inside' document. To populate this section, use the contents from the section in the 'outside' document labeled "Data Analysis". Only populate the new 'inside' document with the last 2 paragraphs of the 'outside' documents section. DO NOT include the first two sentences from the 'outside' document, from this section, Im talking about "Boster Bio offers an easy-to-use online ELISA data analysis tool. Try it out at https://www.bosterbio.com/biology-research-tools/elisa-data-analysis- online" Delete this please from occurring ever.
+
+No need to include "1 publications citing this product" or "Submit a Product Review to Biocompare.com", this whole section can be disregarded.
+
+The final section that needs to be inserted into the 'inside' document should be titled "DISCLAIMER" this section should contain the following two paragraphs. This section should always be included in the 'inside' document, no matter the 'outside' documents content. Here is what should populate the "DISCLAIMER" section, 
+"This information is believed to be correct but does not claim to be all-inclusive and shall be used only as a guide. The supplier of this kit shall not be held liable for any damage resulting from the handling of or contact with the above product. 
+
+This material is sold for in-vitro use only in manufacturing and research.  This material is not suitable for human use.  It is the responsibility of the user to undertake sufficient verification and testing to determine the suitability of each product’s application.  The statements herein are offered for informational purposes only and are intended to be used solely for your consideration, investigation and verification."
+
+Both of these paragraphs should be italicized. The only two paragraphs that should be italicized in the whole document.
+
+Everything else in the new document should fall under these conditions:
+Calibri 11 for body.
+Calibri 12 bold for the section titles as well as blue font color, can use Heading style for this if thats easier.
+Paragraph spacing: Multiple at 1.15, for the whole document.
+The same footnote found in the 'inside' document on every page of that document. However it may be easier to keep the footnote in the template for the inside document, so this is most likely not necessary to code.
+
+The word "Boster" always needs to be replaced with "Innovative Research"
+The word "PicoKine" always needs to be deleted.
+Images need to be transferred to the new document if possible.
+
+for the footnote if you want to do it:
+make the Innovative Research, Inc
+calibri bold 24, it should also be right-side aligned
+make the website link and Ph and fax
+Open sans light 12, this should be left-side aligned
+
+Completely delete the whole boster first page, and add in a Innovative Research footer.
+making the Innovative Research, Inc. text colored blue
