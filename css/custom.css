@@ -1,0 +1,341 @@
+/* Custom styles for the application */
+
+/* Tutorial styles */
+.tutorial-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1050;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.tutorial-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.tutorial-modal {
+    background-color: var(--bs-dark);
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 2rem;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.tutorial-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: var(--bs-secondary);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.tutorial-close:hover {
+    color: var(--bs-primary);
+}
+
+.tutorial-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.tutorial-title {
+    color: var(--bs-primary);
+    margin-bottom: 0.5rem;
+}
+
+.tutorial-subtitle {
+    color: var(--bs-light);
+    font-weight: normal;
+}
+
+.tutorial-steps {
+    counter-reset: step;
+}
+
+.tutorial-step {
+    position: relative;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.05);
+    display: none;
+}
+
+.tutorial-step.active {
+    display: block;
+    animation: fadeInStep 0.5s ease-out;
+}
+
+@keyframes fadeInStep {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tutorial-step-number {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    background-color: var(--bs-primary);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.tutorial-step-number::before {
+    counter-increment: step;
+    content: counter(step);
+}
+
+.tutorial-step-content {
+    color: var(--bs-light);
+}
+
+.tutorial-step-content h4 {
+    color: var(--bs-info);
+    margin-bottom: 1rem;
+}
+
+.tutorial-image {
+    margin: 1rem 0;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid var(--bs-secondary);
+}
+
+.tutorial-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+}
+
+.tutorial-nav-btn {
+    min-width: 100px;
+}
+
+.tutorial-progress {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.tutorial-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+    background-color: var(--bs-secondary);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.tutorial-dot.active {
+    background-color: var(--bs-primary);
+}
+
+.tutorial-trigger {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--bs-primary);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.2s;
+}
+
+.tutorial-trigger:hover {
+    transform: scale(1.1);
+}
+
+.tutorial-complete-message {
+    text-align: center;
+    padding: 2rem;
+    display: none;
+}
+
+.tutorial-complete-message.active {
+    display: block;
+    animation: fadeInStep 0.5s ease-out;
+}
+
+.tutorial-complete-icon {
+    font-size: 3rem;
+    color: var(--bs-success);
+    margin-bottom: 1rem;
+}
+
+.tooltip-target {
+    position: relative;
+}
+
+.hotspot {
+    position: absolute;
+    background-color: rgba(var(--bs-info-rgb), 0.2);
+    border: 2px solid var(--bs-info);
+    border-radius: 4px;
+    z-index: 1040;
+    pointer-events: none;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(13, 202, 240, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(13, 202, 240, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(13, 202, 240, 0);
+    }
+}
+
+/* Drag and drop zone */
+.dropzone {
+    border: 2px dashed var(--bs-secondary);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+.dropzone:hover {
+    background-color: rgba(0, 0, 0, 0.15);
+    border-color: var(--bs-primary);
+}
+
+.dropzone.dragover {
+    background-color: rgba(13, 110, 253, 0.15);
+    border-color: var(--bs-primary);
+}
+
+.dropzone .upload-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--bs-secondary);
+}
+
+.dropzone .drag-text {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.dropzone .or-text {
+    margin: 1rem 0;
+    position: relative;
+}
+
+.dropzone .or-text:before,
+.dropzone .or-text:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background-color: var(--bs-secondary);
+}
+
+.dropzone .or-text:before {
+    left: 0;
+}
+
+.dropzone .or-text:after {
+    right: 0;
+}
+
+/* File preview */
+.file-preview {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.05);
+    margin-bottom: 1rem;
+}
+
+.file-preview .file-icon {
+    font-size: 1.5rem;
+    margin-right: 0.75rem;
+    color: var(--bs-primary);
+}
+
+.file-preview .file-info {
+    flex-grow: 1;
+}
+
+.file-preview .file-name {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.file-preview .file-meta {
+    font-size: 0.875rem;
+    color: var(--bs-secondary-color);
+}
+
+.file-preview .remove-file {
+    cursor: pointer;
+    color: var(--bs-danger);
+    font-size: 1.25rem;
+}
+
+/* Processing state */
+.processing {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Fade animations */
+.fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+.fade-out {
+    animation: fadeOut 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}

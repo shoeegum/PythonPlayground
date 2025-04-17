@@ -1,0 +1,13 @@
+Assistant checkpoint: Fix document processing performance issues
+
+Assistant generated file changes:
+- elisa_document_converter.py: Fix infinite recursion in table processing, Fix section extraction to avoid recursion
+
+---
+
+User prompt:
+
+It will not process documents, its going too slow
+
+Replit-Commit-Author: Assistant
+Replit-Commit-Session-Id: f7f94d27-d2dd-4a5d-b5d1-9d49cba5749e
