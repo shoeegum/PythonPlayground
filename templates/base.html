@@ -13,13 +13,10 @@
     {% block extra_css %}{% endblock %}
 </head>
 <body>
-    <header class="bg-dark py-3">
-        <div class="container">
+    <header class="bg-dark">
+        <div class="container py-2">
             <div class="d-flex align-items-center justify-content-between">
-                <h1 class="text-light mb-0">
-                    <i class="fas fa-file-word me-2"></i>
-                    DOCX Text Editor
-                </h1>
+                <h1 class="text-light mb-0">DOCX Text Editor</h1>
                 <nav>
                     <ul class="nav">
                         <li class="nav-item">
@@ -30,6 +27,16 @@
                         <li class="nav-item">
                             <a class="nav-link text-light" href="{{ url_for('elisa_converter') }}">
                                 <i class="fas fa-microscope me-1"></i> ELISA Converter
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="{{ url_for('completed_documents') }}">
+                                <i class="fas fa-folder-open me-1"></i> Completed Documents
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="{{ url_for('logout') }}">
+                                <i class="fas fa-sign-out-alt me-1"></i> Logout
                             </a>
                         </li>
                     </ul>

@@ -1,4 +1,70 @@
 /* Custom styles for the application */
+:root {
+    --ir-blue: #0062ae;
+}
+
+.tutorial-trigger {
+    background-color: var(--ir-blue) !important;
+}
+
+.bg-info {
+    background-color: var(--ir-blue) !important;
+}
+
+.btn-info {
+    background-color: var(--ir-blue) !important;
+    border-color: var(--ir-blue) !important;
+    color: white !important;
+}
+
+.btn-outline-primary {
+    border-color: var(--ir-blue) !important;
+    color: var(--ir-blue) !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--ir-blue) !important;
+    color: white !important;
+}
+
+.upload-icon {
+    color: var(--ir-blue) !important;
+}
+
+.dropzone:hover {
+    border-color: var(--ir-blue) !important;
+}
+
+.dropzone.dragover {
+    background-color: rgba(25, 120, 231, 0.15) !important;
+    border-color: var(--ir-blue) !important;
+}
+
+.btn-primary {
+    background-color: var(--ir-blue);
+    border-color: var(--ir-blue);
+}
+
+.btn-primary:hover {
+    background-color: #1666c7;
+    border-color: #1666c7;
+}
+
+.text-primary {
+    color: var(--ir-blue) !important;
+}
+
+.bg-primary {
+    background-color: var(--ir-blue) !important;
+}
+
+.tutorial-trigger {
+    background-color: var(--ir-blue);
+}
+
+.tutorial-dot.active {
+    background-color: var(--ir-blue);
+}
 
 /* Tutorial styles */
 .tutorial-overlay {

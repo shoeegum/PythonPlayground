@@ -221,13 +221,25 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-6 mb-3">
+                        <div class="col-md-4 mb-3">
+                            <label for="company" class="form-label">Company</label>
+                            <select class="form-select" id="company" name="company" required>
+                                <option value="">Select Company</option>
+                                <option value="boster">Boster</option>
+                                <option value="reddot">Red Dot</option>
+                                <option value="elabs">eLabs</option>
+                                <option value="icl">ICL</option>
+                                <option value="arbor">Arbor Assay</option>
+                                <option value="assaypro">Assay Pro</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 mb-3">
                             <label for="catalog_no" class="form-label">Catalog Number</label>
                             <input type="text" class="form-control" id="catalog_no" name="catalog_no" placeholder="IHUUCN2KT" required>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="lot_no" class="form-label">Lot Number</label>
-                            <input type="text" class="form-control" id="lot_no" name="lot_no" placeholder="0123456789" required>
+                            <input type="text" class="form-control" id="lot_no" name="lot_no" placeholder="Enter lot number (letters/numbers)" pattern="[A-Za-z0-9-]+" required>
                         </div>
                     </div>
 
