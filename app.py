@@ -30,7 +30,13 @@ app.config['UPLOAD_FOLDER'] = tempfile.gettempdir()  # Use temp directory for up
 app.config['ALLOWED_EXTENSIONS'] = {'docx'}
 
 # Get password from environment variable
-APP_PASSWORD = os.environ.get("APP_PASSWORD", "default-password-please-change")
+from dotenv import load_dotenv
+load_dotenv()
+
+# Get password from environment variable
+APP_PASSWORD = os.environ.get("APP_PASSWORD")
+if not APP_PASSWORD:
+    raise ValueError("APP_PASSWORD environment variable is not set")
 
 def login_required(f):
     @wraps(f)
