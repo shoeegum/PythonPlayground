@@ -1,0 +1,402 @@
+{% extends 'base.html' %}
+
+{% block title %}ELISA Document Converter{% endblock %}
+
+{% block content %}
+<!-- Tutorial Overlay -->
+<div class="tutorial-overlay" id="tutorialOverlay">
+    <div class="tutorial-modal">
+        <div class="tutorial-close" id="tutorialClose">
+            <i class="fas fa-times"></i>
+        </div>
+        
+        <div class="tutorial-header">
+            <h2 class="tutorial-title">ELISA Document Converter Tutorial</h2>
+            <p class="tutorial-subtitle">Let's learn how to convert ELISA documentation</p>
+        </div>
+        
+        <div class="tutorial-steps" id="tutorialSteps">
+            <!-- Step 1: Introduction -->
+            <div class="tutorial-step active" data-step="1">
+                <div class="tutorial-step-number"></div>
+                <div class="tutorial-step-content">
+                    <h4>What This Tool Does</h4>
+                    <p>The ELISA Document Converter is a specialized tool that:</p>
+                    <ul>
+                        <li>Extracts content from Boster ELISA kit documentation ("outside" document)</li>
+                        <li>Reorganizes content into an Innovative Research template ("inside" document)</li>
+                        <li>Replaces all instances of "Boster" with "Innovative Research"</li>
+                        <li>Removes all instances of "PicoKine"</li>
+                        <li>Applies proper formatting and styling to the document</li>
+                        <li>Inserts catalog and lot numbers in the correct locations</li>
+                    </ul>
+                    <p>This tutorial will show you how to use this specialized converter.</p>
+                </div>
+            </div>
+            
+            <!-- Step 2: Upload the Outside Document -->
+            <div class="tutorial-step" data-step="2">
+                <div class="tutorial-step-number"></div>
+                <div class="tutorial-step-content">
+                    <h4>Uploading the Outside Document</h4>
+                    <p>First, upload the Boster ELISA kit documentation:</p>
+                    <ol>
+                        <li>Drag and drop the Boster ELISA document into the first upload area, or</li>
+                        <li>Click the "Browse Files" button to select the file</li>
+                    </ol>
+                    <p>This is the source document containing all the content that needs to be extracted.</p>
+                    <p class="text-info"><i class="fas fa-info-circle"></i> Example filename: EK1586_Mouse_KLK1Kallikrein_1_ELISA_Kit_PicoKine_Datasheet.docx</p>
+                </div>
+            </div>
+            
+            <!-- Step 3: Upload the Template Document -->
+            <div class="tutorial-step" data-step="3">
+                <div class="tutorial-step-number"></div>
+                <div class="tutorial-step-content">
+                    <h4>Uploading the Template Document</h4>
+                    <p>Next, upload the Innovative Research template document:</p>
+                    <ol>
+                        <li>Drag and drop the template document into the second upload area, or</li>
+                        <li>Click the "Browse Files" button to select the file</li>
+                    </ol>
+                    <p>This is the template that will be populated with content from the outside document.</p>
+                    <p class="text-info"><i class="fas fa-info-circle"></i> Example filename: Boster Template.docx</p>
+                </div>
+            </div>
+            
+            <!-- Step 4: Enter Catalog and Lot Numbers -->
+            <div class="tutorial-step" data-step="4">
+                <div class="tutorial-step-number"></div>
+                <div class="tutorial-step-content">
+                    <h4>Entering Catalog and Lot Numbers</h4>
+                    <p>Provide the catalog and lot numbers for the document:</p>
+                    <ol>
+                        <li>Enter the catalog number in the "Catalog Number" field</li>
+                        <li>Enter the lot number in the "Lot Number" field</li>
+                    </ol>
+                    <p>These numbers will be inserted in the appropriate places in the final document.</p>
+                    <p class="text-warning"><i class="fas fa-exclamation-triangle"></i> Both fields are required to process the document.</p>
+                </div>
+            </div>
+            
+            <!-- Step 5: Convert and Download -->
+            <div class="tutorial-step" data-step="5">
+                <div class="tutorial-step-number"></div>
+                <div class="tutorial-step-content">
+                    <h4>Converting and Downloading</h4>
+                    <p>After uploading both documents and entering the catalog/lot numbers:</p>
+                    <ol>
+                        <li>Click the "Convert Document" button</li>
+                        <li>Wait while the document is processed (this may take a minute)</li>
+                        <li>Once complete, you'll see a download link for your converted document</li>
+                        <li>Click "Download Converted Document" to save the result to your computer</li>
+                    </ol>
+                    <p>The converter will automatically extract all required sections, apply formatting, and make the necessary text replacements.</p>
+                    <p class="text-info"><i class="fas fa-info-circle"></i> Need help? Click the tutorial button <i class="fas fa-question"></i> at any time to see this guide again.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tutorial Complete Message -->
+        <div class="tutorial-complete-message" id="tutorialComplete">
+            <div class="tutorial-complete-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>You're Ready to Convert Documents!</h3>
+            <p>You now know how to use the ELISA Document Converter. Try it out with your own ELISA documentation.</p>
+            <button class="btn btn-primary mt-3" id="tutorialFinishBtn">Start Converting</button>
+        </div>
+        
+        <!-- Navigation Buttons -->
+        <div class="tutorial-navigation" id="tutorialNavigation">
+            <button class="btn btn-outline-secondary tutorial-nav-btn" id="prevBtn" disabled>Previous</button>
+            <button class="btn btn-primary tutorial-nav-btn" id="nextBtn">Next</button>
+        </div>
+        
+        <!-- Progress Dots -->
+        <div class="tutorial-progress" id="tutorialProgress">
+            <div class="tutorial-dot active" data-step="1"></div>
+            <div class="tutorial-dot" data-step="2"></div>
+            <div class="tutorial-dot" data-step="3"></div>
+            <div class="tutorial-dot" data-step="4"></div>
+            <div class="tutorial-dot" data-step="5"></div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <div class="card shadow-sm mb-4">
+            <div class="card-header">
+                <h2 class="card-title h4 mb-0">
+                    <i class="fas fa-file-medical me-2"></i>
+                    ELISA Document Converter
+                </h2>
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    Convert ELISA kit documentation from Boster to Innovative Research format. This tool will
+                    extract all required information from the source document and format it according to Innovative Research
+                    standards.
+                </p>
+
+                <div class="alert alert-info">
+                    <div class="d-flex">
+                        <div class="me-3">
+                            <i class="fas fa-info-circle fa-2x"></i>
+                        </div>
+                        <div>
+                            <h5 class="alert-heading">How it works</h5>
+                            <p class="mb-0">
+                                1. Upload the "outside" document (Boster ELISA kit documentation)<br>
+                                2. Upload the "inside" template document<br>
+                                3. Enter the catalog number and lot number<br>
+                                4. Click "Convert Document"<br>
+                                5. Download the processed document
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <form action="{{ url_for('elisa_converter') }}" method="post" enctype="multipart/form-data" id="elisaForm">
+                    <div class="mb-3">
+                        <label for="outside_document" class="form-label">Outside Document (Boster ELISA Documentation)</label>
+                        
+                        <div class="dropzone" id="outsideDocDropzone">
+                            <div class="upload-icon">
+                                <i class="fas fa-file-upload"></i>
+                            </div>
+                            <h4 class="drag-text">Drag & Drop the Boster ELISA document here</h4>
+                            <div class="or-text">or</div>
+                            <button type="button" class="btn btn-outline-primary" id="browseBosterBtn">
+                                <i class="fas fa-folder-open me-2"></i>Browse Files
+                            </button>
+                            <input type="file" class="d-none" id="outside_document" name="outside_document" accept=".docx" required>
+                        </div>
+                        
+                        <div id="outsideFilePreview" class="file-preview d-none">
+                            <div class="file-icon">
+                                <i class="fas fa-file-word"></i>
+                            </div>
+                            <div class="file-info">
+                                <div class="file-name" id="outsideFileName">document.docx</div>
+                                <div class="file-meta" id="outsideFileSize">0 KB</div>
+                            </div>
+                            <div class="remove-file" id="removeOutsideFile">
+                                <i class="fas fa-times-circle"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="form-text">Upload the Boster ELISA kit documentation (e.g., EK1586_Mouse_KLK1Kallikrein_1_ELISA_Kit_PicoKine_Datasheet.docx)</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="template_document" class="form-label">Template Document (Innovative Research Template)</label>
+                        
+                        <div class="dropzone" id="templateDocDropzone">
+                            <div class="upload-icon">
+                                <i class="fas fa-file-upload"></i>
+                            </div>
+                            <h4 class="drag-text">Drag & Drop the template document here</h4>
+                            <div class="or-text">or</div>
+                            <button type="button" class="btn btn-outline-primary" id="browseTemplateBtn">
+                                <i class="fas fa-folder-open me-2"></i>Browse Files
+                            </button>
+                            <input type="file" class="d-none" id="template_document" name="template_document" accept=".docx" required>
+                        </div>
+                        
+                        <div id="templateFilePreview" class="file-preview d-none">
+                            <div class="file-icon">
+                                <i class="fas fa-file-word"></i>
+                            </div>
+                            <div class="file-info">
+                                <div class="file-name" id="templateFileName">template.docx</div>
+                                <div class="file-meta" id="templateFileSize">0 KB</div>
+                            </div>
+                            <div class="remove-file" id="removeTemplateFile">
+                                <i class="fas fa-times-circle"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="form-text">Upload the Innovative Research template document (e.g., Boster Template.docx)</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="company" class="form-label">Company</label>
+                            <select class="form-select" id="company" name="company" required>
+                                <option value="">Select Company</option>
+                                <option value="boster">Boster</option>
+                                <option value="reddot">Red Dot</option>
+                                <option value="elabs">eLabs</option>
+                                <option value="icl">ICL</option>
+                                <option value="arbor">Arbor Assay</option>
+                                <option value="assaypro">Assay Pro</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="catalog_no" class="form-label">Catalog Number</label>
+                            <input type="text" class="form-control" id="catalog_no" name="catalog_no" placeholder="IHUUCN2KT" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="lot_no" class="form-label">Lot Number</label>
+                            <input type="text" class="form-control" id="lot_no" name="lot_no" placeholder="Enter lot number (letters/numbers)" pattern="[A-Za-z0-9-]+" required>
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary" id="convertBtn">
+                            <i class="fas fa-sync-alt me-2"></i>Convert Document
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        {% if request.args.get('processed') %}
+        <div class="card shadow-sm">
+            <div class="card-header bg-success text-white">
+                <h3 class="card-title h5 mb-0">
+                    <i class="fas fa-check-circle me-2"></i>
+                    Document Converted Successfully
+                </h3>
+            </div>
+            <div class="card-body text-center">
+                <p class="mb-4">Your ELISA document has been converted and is ready for download.</p>
+                <a href="{{ url_for('download_file') }}" class="btn btn-success btn-lg">
+                    <i class="fas fa-download me-2"></i>
+                    Download Converted Document
+                </a>
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="card shadow-sm mt-4">
+            <div class="card-header">
+                <h3 class="card-title h5 mb-0">
+                    <i class="fas fa-lightbulb me-2"></i>
+                    Conversion Details
+                </h3>
+            </div>
+            <div class="card-body">
+                <p>The converter will automatically perform the following operations:</p>
+                <ul class="mb-0">
+                    <li>Extract all required sections from the source document</li>
+                    <li>Replace all instances of "Boster" with "Innovative Research"</li>
+                    <li>Remove all instances of "PicoKine"</li>
+                    <li>Format text according to Innovative Research standards</li>
+                    <li>Insert the provided catalog and lot numbers</li>
+                    <li>Add required disclaimer text</li>
+                    <li>Apply proper formatting and styling to the document</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const elisaForm = document.getElementById('elisaForm');
+        const convertBtn = document.getElementById('convertBtn');
+        const outsideDocument = document.getElementById('outside_document');
+        const templateDocument = document.getElementById('template_document');
+        const catalogNo = document.getElementById('catalog_no');
+        const lotNo = document.getElementById('lot_no');
+        
+        // Show loading state when form is submitted
+        elisaForm.addEventListener('submit', function(event) {
+            if (!validateForm()) {
+                event.preventDefault();
+                return;
+            }
+            
+            // Show loading state
+            convertBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Converting...';
+            convertBtn.disabled = true;
+            document.body.classList.add('processing');
+        });
+        
+        // Function to validate the form
+        function validateForm() {
+            // Check if files are selected
+            if (!outsideDocument.files || outsideDocument.files.length === 0) {
+                showError('Please select an outside document file');
+                return false;
+            }
+            
+            if (!templateDocument.files || templateDocument.files.length === 0) {
+                showError('Please select a template document file');
+                return false;
+            }
+            
+            // Check file types
+            const outsideExt = outsideDocument.files[0].name.split('.').pop().toLowerCase();
+            const templateExt = templateDocument.files[0].name.split('.').pop().toLowerCase();
+            
+            if (outsideExt !== 'docx' || templateExt !== 'docx') {
+                showError('Only DOCX files are supported');
+                return false;
+            }
+            
+            // Check catalog and lot numbers
+            if (!catalogNo.value.trim()) {
+                showError('Please enter a catalog number');
+                return false;
+            }
+            
+            if (!lotNo.value.trim()) {
+                showError('Please enter a lot number');
+                return false;
+            }
+            
+            return true;
+        }
+        
+        // Function to show error message
+        function showError(message) {
+            // Create a Bootstrap alert
+            const alertDiv = document.createElement('div');
+            alertDiv.className = 'alert alert-danger alert-dismissible fade show';
+            alertDiv.setAttribute('role', 'alert');
+            alertDiv.innerHTML = `
+                ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            `;
+            
+            // Insert the alert before the form
+            elisaForm.parentNode.insertBefore(alertDiv, elisaForm);
+            
+            // Scroll to the alert
+            alertDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        
+        // Preview file names when selected
+        outsideDocument.addEventListener('change', function() {
+            previewFileName(this, 'outside-file-badge');
+        });
+        
+        templateDocument.addEventListener('change', function() {
+            previewFileName(this, 'template-file-badge');
+        });
+        
+        function previewFileName(input, badgeClass) {
+            if (input.files && input.files.length > 0) {
+                const fileName = input.files[0].name;
+                // Add a small badge with the file name next to the input
+                const fileNameDisplay = document.createElement('span');
+                fileNameDisplay.className = `badge bg-secondary ms-2 ${badgeClass}`;
+                fileNameDisplay.textContent = fileName;
+                
+                // Remove any existing file name display
+                const existingDisplay = input.parentNode.querySelector(`.${badgeClass}`);
+                if (existingDisplay) {
+                    existingDisplay.remove();
+                }
+                
+                input.parentNode.appendChild(fileNameDisplay);
+            }
+        }
+    });
+</script>
+{% endblock %}

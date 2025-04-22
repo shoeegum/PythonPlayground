@@ -1,0 +1,174 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Completed Documents{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card shadow-sm">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h2 class="card-title h4 mb-0">
+                    <i class="fas fa-folder-open me-2"></i>
+                    Completed Conversions
+                </h2>
+                <span class="badge bg-primary">
+                    <i class="fas fa-file-alt me-1"></i>
+                    Total: {{ completed_docs | sum(attribute='documents') }}
+                </span>
+            </div>
+            <div class="card-body">
+                <!-- Boster Section -->
+                <div class="company-section mb-4">
+                    <h3 class="h5 mb-3">Boster</h3>
+                    <div class="list-group">
+                        <div class="list-group-item">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h6 class="mb-2">Original: EK1586_Mouse_KLK1_ELISA_Kit.docx</h6>
+                                <small class="text-muted">2024-04-18 13:45</small>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="fas fa-file-word text-primary me-2"></i>
+                                <a href="#" class="text-decoration-none">
+                                    Converted: IHUKLK1_L24586.docx
+                                </a>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">
+                                    Catalog: IHUKLK1 | Lot: L24586
+                                </small>
+                                <span class="badge bg-primary">Boster</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Red Dot Section -->
+                <div class="company-section mb-4">
+                    <h3 class="h5 mb-3">Red Dot</h3>
+                    <div class="list-group">
+                        <div class="list-group-item">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h6 class="mb-2">Original: RD290_Human_IL6_ELISA.docx</h6>
+                                <small class="text-muted">2024-04-18 14:30</small>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="fas fa-file-word text-primary me-2"></i>
+                                <a href="#" class="text-decoration-none">
+                                    Converted: IHUIL6_L24601.docx
+                                </a>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">
+                                    Catalog: IHUIL6 | Lot: L24601
+                                </small>
+                                <span class="badge bg-primary">Red Dot</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- eLabs Section -->
+                <div class="company-section mb-4">
+                    <h3 class="h5 mb-3">eLabs</h3>
+                    <div class="list-group">
+                        <div class="list-group-item">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h6 class="mb-2">Original: E00123_Rat_TNFa_ELISA.docx</h6>
+                                <small class="text-muted">2024-04-18 15:15</small>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="fas fa-file-word text-primary me-2"></i>
+                                <a href="#" class="text-decoration-none">
+                                    Converted: IRTNFA_L24789.docx
+                                </a>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">
+                                    Catalog: IRTNFA | Lot: L24789
+                                </small>
+                                <span class="badge bg-primary">eLabs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ICL Section -->
+                <div class="company-section mb-4">
+                    <h3 class="h5 mb-3">ICL</h3>
+                    <div class="list-group">
+                        <div class="list-group-item">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h6 class="mb-2">Original: ICL_Human_IL1B_ELISA.docx</h6>
+                                <small class="text-muted">2024-04-18 16:00</small>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="fas fa-file-word text-primary me-2"></i>
+                                <a href="#" class="text-decoration-none">
+                                    Converted: IHUIL1B_L24801.docx
+                                </a>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">
+                                    Catalog: IHUIL1B | Lot: L24801
+                                </small>
+                                <span class="badge bg-primary">ICL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Arbor Assay Section -->
+                <div class="company-section mb-4">
+                    <h3 class="h5 mb-3">Arbor Assay</h3>
+                    <div class="list-group">
+                        <div class="list-group-item">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h6 class="mb-2">Original: AA_Mouse_VEGF_ELISA.docx</h6>
+                                <small class="text-muted">2024-04-18 16:30</small>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="fas fa-file-word text-primary me-2"></i>
+                                <a href="#" class="text-decoration-none">
+                                    Converted: IMVEGF_L24820.docx
+                                </a>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">
+                                    Catalog: IMVEGF | Lot: L24820
+                                </small>
+                                <span class="badge bg-primary">Arbor Assay</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AssayPro Section -->
+                <div class="company-section mb-4">
+                    <h3 class="h5 mb-3">AssayPro</h3>
+                    <div class="list-group">
+                        <div class="list-group-item">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h6 class="mb-2">Original: AP_Rat_IgG_ELISA.docx</h6>
+                                <small class="text-muted">2024-04-18 17:00</small>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="fas fa-file-word text-primary me-2"></i>
+                                <a href="#" class="text-decoration-none">
+                                    Converted: IRIGG_L24835.docx
+                                </a>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">
+                                    Catalog: IRIGG | Lot: L24835
+                                </small>
+                                <span class="badge bg-primary">AssayPro</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
